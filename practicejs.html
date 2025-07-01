@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice js full a2z</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p>JAVASCRIPT FULL MASTERY</p>
+
+    <script>
+     //TRY AND CATCH-----------------
+    //  const username ="Papple";
+    //  try{
+    //   somefunction();
+    //   console.log("hi");
+    //  }catch(error){
+    //   console.log("error  occured");
+    //  }
+    //  console.log("username");
+    //
+    //function-------------
+
+    // function greet(){
+    //   console.log("hi")
+    // }
+    // greet();
+    //assigning varibale inside function and use typeof its gives funtcion not its type only funtion
+    //
+    //return and undifined
+//     function calculate(x,y){
+//     return x+y;
+// }                                                                         console.log(calculate(2,22));
+// VM778:3 24
+//
+//  function calculate(x,y){
+//      return x+y;
+//  }
+//  const  result =calculate(11,12);
+//  console.log(result);  23
+//
+//a pure function doesnt change the paramater ad makes changes iside paraameter   parameter=(inside it)
+//--------------------
+//ARROW FUNCTION OR FAT ARROW FUNCTION------------------
+//
+//in arrow function instead of writing const varname=function(x,y)......replace function by 
+// const calculateAddition =(x,y) =>{
+//   return x+y;
+// }
+// console.log(calculateAddition(12,11));  23
+//
+// const add=(x,y)=> x+y;
+// console.log(add(11,12)); 23   ALSO EASYILY
+//
+// const sumGreaterXY=(x,y) =>{
+//   if (x>y){
+//     return x+y
+//   }else{
+//     return x-y
+//   }
+// }
+// console.log (sumGreaterXY(11,12));  -1
+//
+// const Sum=(x,y) => x>y ? x+y :x-y;
+// console.log(Sum(160,17));      177
+//
+// const Sum=(x,y)=> x>y ? x+y :x-y;
+// const output =Sum(160,17);
+// console.log(output);       177
+//
+//sum of 1 to 20 number
+// function calculateSum(min,max){
+//   let total =0;
+//   for(let i=min; i<=max; i++){
+//     total =total +i;
+//   }
+//   console.log(total);
+// }
+// const result =calculateSum(1,20);       20
+//
+//------------------------------
+// map and set collection in javascript-------------------
+// A Map ----is a collection of key-value pairs, where:
+// Keys can be of any data type (not just strings).
+// It maintains the order of insertion.
+// A Set---- is a collection of unique values only.
+// It does not allow duplicates.
+// It can store values of any type.
+// Maintains the insertion order.--------
+//
+// let numbers = [1, 2, 2, 3, 4, 4, 5];
+// let uniqueNumbers = new Set(numbers);
+// console.log(uniqueNumbers); // Set(5) {1, 2, 3, 4, 5}REMOVED DUPLICATED
+//
+//
+// let student = new Map();
+// student.set("name", "Riya");
+// student.set("roll", 101);
+// student.set("passed", true);
+// console.log(student.get("name")); // Riya
+// console.log(student.has("roll")); // true
+// VM914:6 Riya
+// VM914:7 true
+//
+//
+// let fruitPrices = new Map();
+// fruitPrices.set("apple", 100);
+// fruitPrices.set("banana", 40);
+// fruitPrices.set("mango", 150);
+// for (let [fruit, price] of fruitPrices) {
+//   console.log(`${fruit} costs ₹${price}`);
+// }
+// VM918:7 apple costs ₹100
+// VM918:7 banana costs ₹40
+// VM918:7 mango costs ₹150
+//
+//-------------------------
+// ITERATING OVEER STRING---------------------Iterating means going through each item (one by one)-------
+// let str = "World";
+
+// for (let i = 0; i < str.length; i++) {
+//   console.log(str[i]);
+// }
+// VM922:4 W
+// VM922:4 o
+// VM922:4 r
+// VM922:4 l
+// VM922:4 d
+//
+//
+// let str = "Hello";
+
+// for (let char of str) {
+//   console.log(char);
+// }
+// H
+// e
+// l
+// l
+// o
+//
+//---------------------
+//                Summary: Iteration Types--------------
+// Collection	       Example Code	                  Output
+// String	          for (let ch of str)	           H, e, l, l, o
+// Set	            for (let val of mySet)	         each unique value
+// Map	           for (let [key, val] of myMap)	   key, value pairs
+//
+// String(ALL IN ONE ITERATING QUESTION)---(map+set)----------------
+// let name = "Kartik";
+// for (let ch of name) {
+//   console.log("Char:", ch);
+// }
+
+// // Set--------
+// let fruits = new Set(["apple", "banana", "apple"]);
+// for (let fruit of fruits) {
+//   console.log("Fruit:", fruit);
+// }
+
+// // Map-------------
+// let scores = new Map();
+// scores.set("math", 90);
+// scores.set("science", 95);
+// for (let [subject, score] of scores) {
+//   console.log(`${subject}: ${score}`);
+// }
+
+// VM930:4 Char: K
+// VM930:4 Char: a
+// VM930:4 Char: r
+// VM930:4 Char: t
+// VM930:4 Char: i
+// VM930:4 Char: k
+// VM930:10 Fruit: apple
+// VM930:10 Fruit: banana
+// VM930:18 math: 90
+// VM930:18 science: 95
+//
+//
+//---------------------
+//charCodeAt--(STRING METHOD)
+// const displayMessage = "I am a Student";
+// const index = 2;
+
+// const asciiCode =displayMessage.charCodeAt(index);
+// console.log(asciiCode);            97ASCII CODE
+//
+//charAt--(STRING METHOD)
+// const displayMessage = "I am devil";
+// const index = 5;
+// console.log(displayMessage.charAt(index));            d
+//
+//-------------------------------
+// const displayMessage = "hello hloo aloo";
+// console.log(displayMessage.includes("aloo"));     true
+//---------
+// const userName = "kartikey super heo   saxena" ;
+// const subString = userName.substring(0,10);
+// console.log(subString +"OH HO ");                           kartikey sOH HO 
+//------
+
+// STRING METHOD LIKE:--------
+// CharAt      SHOW CHARAACTER BY PUTTING INDEX OF THEIR 
+// charCodeAt   HELPS TO FIND CODE  OF CHARACTER BY INDEX (ASCII TOO)
+// indexOf           FIND INDEX NUMBER
+// includes              RETURNS TRUE OR FALSE (BOOLEAN)ONLY  ITS SEARCH UOR  FUNCTION DATA IF INDEXING CHARATER THERE THEN TRUE OTHERWWISE FALSE
+// to UpperCase     makes every lower case to upper    M->m EVERTHING BECOME
+// to LowerCase   makes every uppercase to lower    all become lower
+// substring      two index gives (a,n) then find it
+// trim            remove unnecessary GAP 
+//-----------------------------------------
+//ARRAY--
+//..
+// let s1 ="apple";
+// let s2 = "banana";
+// let s3 = "orange"
+//  let fruitsGang =["apple","banana","orange"]
+//  for(let i=0;i<3;i++){
+//   console.log(fruitsGang[i])
+//  }     
+// apple
+// VM34:6 banana
+// VM34:6 orange
+//..
+// let s1 ="apple";
+// let s2 = "banana";
+// let s3 = "orange";
+
+// let arrLength = fruitsGang.length;
+// console.log(arrLength);
+
+//  let fruitsGang =["apple","banana","orange"]
+//  for(let i=0;i<3;i++){
+//   console.log(fruitsGang[i])
+//  }
+//     3
+// VM42:10 apple
+// VM42:10 banana
+// VM42:10 orange
+//...
+//    let s1 ="apple";
+// let s2 = "banana";
+// let s3 = "orange";
+
+// let arrLength = fruitsGang.length;
+// console.log(arrLength);
+
+// for(let Gang in fruitsGang){
+//   console.log(Gang)
+// }
+
+//  let fruitsGang =["apple","banana","orange"]
+//  for(let i=0;i<3;i++){
+//   console.log(fruitsGang[i])
+//  }
+//    3
+// VM55:9 0
+// VM55:9 1
+// VM55:9 2
+// VM55:14 apple
+// VM55:14 banana
+// VM55:14 orange
+//....
+//
+//ARRAY METHODDS------------
+//1.PUSH     add one elemts at end
+// let fruits = ["apple","banana","litchi"];    
+//   fruits.push("guava");                                                      
+//    console.log(fruits);
+//                          VM398:1 (4) ['apple', 'banana', 'litchi', 'guava']
+//-----
+//2.CONCAT      mix 2 array in a single one
+// let arr1 =["1","2","3"];                                                      
+//    let arr2 = ["4","5","6"];                                                 
+//     let arr3 = arr1.concat(arr2);          we caan even add arr1.concat(arr2,arr5); LIKE THAT                                   
+//        console.log(arr3);
+//                                               VM885:1 (6) ['1', '2', '3', '4', '5', '6']
+//----
+//3.POP remove from ending.....like first pop declare then console.log then works---
+// let courses = ["1","2","3","4"];        
+//       console.log(courses);                              
+//      courses.pop();
+// VM414:1 (4) ['1', '2', '3', '4']
+// '4'
+// //
+// let courses = ["1","2","3","4"];          
+//    console.log(courses ,"left ones");                            
+// courses.pop();                                            
+// console.log(courses);  
+// VM468:1 (4) ['1', '2', '3', '4'] 'left ones'
+// VM468:1 (3) ['1', '2', '3']
+// //
+// let courses = ["1","2","3","4"];                                                      
+//  console.log(courses ,"left ones");                                        
+//  let removedOnes =   courses.pop();                                               
+//    console.log(removedOnes);  
+// VM526:1 (4) ['1', '2', '3', '4'] 'left ones'
+// VM526:1      4
+// //
+// //-----------
+//  4.  slice -----   between any one cN GET DELETED OR SPECIFIED by index (start, before end)---
+// let manCount = ["1","2","3","4"];                                                 
+//  let value = manCount.slice(1,2);         if there is amul...and if we writer (manCount.slict(1));  mul printedd
+// console.log(value);
+//                           VM412:2 ['2']   ==== if console.log(typeof value);   then OBJECT
+//---
+// 5.INCLUDE
+// const availableSize= ["S", "M", "L", "XL", "XXL", "XXXL"]; 
+// const readlineSync = require("readline-sync"); 
+// const userSize = readlineSync.question("Which size of Shirt do you want (S/M/L/XL/XXL/XXXL) -"); 
+// const isSizeAvailable= availableSize.includes (userSize); 
+//  console.log(isSizeAvailable); 
+//                               Which size of Shirt do you want (S/M/L/XL/XXL/XXXL) -S
+//                                true
+//----
+//SORT----(SORTING A 2 Z )
+// const boy = ["a", "c", "x", "e"];
+// boy.sort();
+// console.log(boy);               acex
+//---
+//reverse----
+// const inputStr = "madam"
+// const arr =[1,2,3,4,5]
+// console.log(arr.reverse());       54321
+//--
+//const inputStr = "madam"
+//palindrome
+// const arrOfChar = inputStr.split();         'madam'
+// console.log(arrOfChar);
+//--
+//split
+// const inputStr = "madam hello ji namaste";
+// const arrOfChar = inputStr.split("");
+// console.log(arrOfChar);
+//                                [
+//                                 'm', 'a', 'd', 'a', 'm',
+//                                  ' ', 'h', 'e', 'l', 'l',
+//                                     'o', ' ', 'j', 'i', ' ',
+//                                  'n', 'a', 'm', 'a', 's',
+//                                  't', 'e'
+//                                   ]
+//--
+// const inputStr = "madam hello ji namaste";
+
+// const arrOfChar = inputStr.split(" ");
+// console.log(arrOfChar);
+//                                          [ 'madam', 'hello', 'ji', 'namaste' ]
+//--
+//JOIN    JOIN THEM
+// const inputStr = "prakash";
+// const arrOfChar= inputStr.split("");
+// arrOfChar.reverse();
+// console.log(arrOfChar.join(""));
+//                                       hsakarp
+//--
+//spread array   "..."  HELPS  TO  MAKE IMMPOSSIBLE TO IMPOSSIBLE MUTABILITY CHANGE...LIKE CONST CANT BE CHANGED BUT IT JOIN BOTH
+// const arr1= [1, 2, 3, 4, 5];
+// const arr2= [8, 9];
+// const arr3 =[...arr1, 6, 7, ...arr2, 10, 11];
+// console.log(arr3);
+//  console.log(arr1);
+                                    // [
+//                                     1, 2, 3, 4,  5,
+//                                     6, 7, 8, 9, 10,
+//                                     11
+//                                     ]
+//                                       [ 1, 2, 3, 4, 5 ]
+//--
+//DESTRUCTING ARRAY-- 2method (normal,...rest using)
+// normal=
+//const arr =[["html","css","js"],1,2,3,4,5,6];
+// const [courses,a]=arr;
+// console.log(a);
+// console.log(courses);
+//                                 1
+                                  // [ 'html', 'css', 'js' ]
+ //--
+// const arr =[["html","css","js"],1,2,3,4,5,6];
+// const [courses,...rest]=arr;
+// console.log(rest);
+// console.log(courses);
+                                  // [ 1, 2, 3, 4, 5, 6 ]
+                                  //    [ 'html', 'css', 'js' ]
+  //--
+  //destructing without swap actually swap done
+// let a=5;
+// let b=4;
+// [a,b]=[b,a];
+// console.log("A=",a);
+// console.log("B=",b);              A= 4
+//                                   B= 5
+//---------------
+//copy by reference---------memoring same time affect ...both at same location
+//
+// let arr1 = [1,2,3];
+// let arr2 =arr1;
+// console.log("Arr1 - ",arr1);
+// console.log("Arr2 - ",arr2);
+
+// arr2.push(4);
+// //we updated arr2 only
+// // add push means add 4 at end
+// console.log("Updated Arr1 - ",arr1);
+// // because of array of reference arr1 also changed
+// console.log("Updated arr2 - ",arr2);
+//                                                    Arr1 -  [ 1, 2, 3 ]
+//                                                    Arr2 -  [ 1, 2, 3 ]
+//                                                    Updated Arr1 -  [ 1, 2, 3, 4 ]
+//                                                    Updated arr2 -  [ 1, 2, 3, 4 ]
+//--
+//---------------------------------
+//OBJECTS --->{KEY,VALUE}....key and value called properties----------
+//OBJ PROPERTIES=====
+// const obj={
+//     name:"kartikey",
+//     age:20,
+//     education:"bca"    //1:number can b used
+// };
+// console.log(obj);
+//                       { name: 'kartikey', age: 20, education: 'bca' }
+//--
+// const obj={
+//     name:"kartikey",
+//     age:20,
+//     education:"bca"
+// };
+// console.log(obj.age);
+//                                  20
+//--
+// const obj={
+//     name:"kartikey",
+//     age:20,
+//     education:"bca"          if we use "ale education"(for two words type ""used)=keys
+// };
+// console.log(obj.age);
+// console.log(obj.name);
+// //new style for properties by[]by  inside one should be wit"" means string
+// console.log(obj["education"]);
+                                    //  20
+                                    //   kartikey
+                                    //   bca
+ //----
+//  FUNCTIONS AS PROPERTIES--------------
+// const obj ={
+//     name :"adam",
+//     greetMessage : function(){
+//         console.log("hello adam");
+//     }
+// }
+// console.log(obj);
+                      //  { name: 'adam', greetMessage: [Function: greetMessage] }
+//--
+// const obj ={
+//     name :"adam",
+//     greetMessage : function(){
+//         console.log("hello adam");
+//     }
+// }
+// obj.greetMessage();         A WAY TO CALL SPECIFIC ONE
+//                               hello adam 
+//--
+// const obj ={
+//     name :"adam",
+//      age :21,
+// }
+// obj.city ="Mumbai";
+// //we created its properties(COMPUTED PROPERTY)
+// obj.state="MH";
+// console.log(obj);
+//                                  { name: 'adam', age: 21, city: 'Mumbai', state: 'MH' }
+//--
+// const readlineSync = require("readline-sync");
+// const key = readlineSync.question("What do you want to know about the mentor (name/age/city/state) - ");
+// const obj = {
+//   name: "Prakash",
+//   age: 100
+// };
+// obj.city = "Mumbai";
+// obj.state = "MH";
+// console.log(obj[key]);   in node.js if we typed job out ofquestion then UNDIFINED
+                            // What do you want to know about the mentor (name/age/city/state) - age
+                            // 100
+//-----
+//  const readlineSync = require("readline-sync");
+// const key =readlineSync.question("What do you want to know about the mentor (name/age/city/state)- ");
+// const course = readlineSync.question("Which course do you want to learn (html/css/js/react/redux)- ");
+//  const obj = {
+// name: "Prakash",
+//  age: 100,
+// [course]: "course not available"
+// }
+//  obj.city= "Mumbai";
+//  obj.state = "MH";
+//  console.log(obj["name"]);
+//  console.log(obj[course]);
+                              // What do you want to know about the mentor (name/age/city/state)- name
+                              // Which course do you want to learn (html/css/js/react/redux)- html
+                              //     Prakash
+                              // course not available
+ //---------
+//shorthand property
+//when is getObjects() useful?
+// When you want to reuse the object creation logic.
+//->
+// function getObjects(name,city){
+//     return{
+//         name,
+//         city
+//     }
+// }
+// const obj = getObjects("Prakash","ghaziabad");
+// console.log(obj);
+//                                       { name: 'Prakash', city: 'ghaziabad' }      
+//--------
+// function getObjects(name,city){
+//     return{
+//         name,
+//         city
+//     }
+// }
+// const obj = getObjects("Prakash","ghaziabad");         NO INDEX USE  LET ITEM IN OKEI
+//  for(let item in obj){
+//      console.log(item);
+//  }
+                                  //  name
+                                  //     city
+ //-----
+    //destructuring
+//     let obj ={                           // normally
+//     name:"apple",
+//     address :{
+//         state:"UP",
+//         city : "Ghaziabad",
+//         locality : "Pratap Vihari"
+//     },
+//     courses : ["html","css","javascript"],
+// }
+
+// let {name,address ,courses} =obj;       // this line destructuring
+
+// console.log(name);
+// console.log(address);
+// console.log(courses);
+                            //       apple
+                            //      { state: 'UP', city: 'Ghaziabad', locality: 'Pratap Vihari' }
+                            //  [ 'html', 'css', 'javascript' ]
+ //--
+//ENTRIES---
+// const obj={
+//     name:"basanti",
+//     surname:"lal",
+//     age : 669,
+// };
+// const entries = Object.entries(obj);
+//                                      .entries = helps to return arry of arry of key/values
+// console.log(entries);
+                                  //  [ [ 'name', 'basanti' ], [ 'surname', 'lal' ], [ 'age', 669 ] ]
+ //--
+ //KEY-----
+//  const obj={
+//     name:"basanti",
+//     surname:"lal",
+//     age : 669,
+// };
+// const keys = Object.keys(obj);
+// // .key = return keys like name,surname ,age
+// console.log(keys);
+                                              // [ 'name', 'surname', 'age' ]
+//--
+//VALUES----
+// const obj={
+//     name:"basanti",
+//     surname:"lal",
+//     age : 669,
+// };
+// const values = Object.values(obj);
+// // .values = return values like basanti,lal ,669
+// console.log(values);
+                                        // [ 'basanti', 'lal', 669 ]
+ //--
+ //KEYOWRDS=?   JavaScript keywords are reserved words with special meanings 
+ // that cannot be used as identifiers (variable names, function names, etc.).
+ //  They are part of the language's syntax and are used to perform specific actions or 
+ // define language constructs. Here's a breakdown of some important categories of keywords;----BELOW--
+ //--
+ //Inside Variable:=var, let, const
+//  Inside Control Flow:=if, else, else if, switch, case, break, continue, for, while, do
+// Inside Function:=function, return, async, await
+// Inside Class/Object:=class, extends, this, new, get, set
+//  Inside Data/Value:=typeof, true, false, null
+// Inside Others:=import, export, try, catch, finally, in, instanceof, delete
+//--
+ //THIS KEYWORD----------refer to obj tjat is executing obj(IMPLICIT BINDING)
+//  const obj ={
+//     name:"babita",
+//     surname: "ji",
+//     displayMessage:function(){
+//         console.log(this);
+//     },
+// };
+// //
+// obj.displayMessage();
+// console.log(obj);
+//      OUTPUT--                         {
+//   name: 'babita',
+//   surname: 'ji',
+//   displayMessage: [Function: displayMessage]
+// }
+// {
+//   name: 'babita',
+//   surname: 'ji',
+//   displayMessage: [Function: displayMessage]
+// }    OBJ.NAME = THIS.NAME (BCZS IT REFER TO  OBJ "THIS")
+//----------------------
+// function calculateSum(){
+//     console.log(this);
+// }
+// calculateSum();----bellow output
+//in this one program ....no object there then it take globally an obj(his choice)
+//GLOBAL OBJ=WINDOW OBJ--
+// <ref *1> Object [global] {
+//   global: [Circular *1],
+//   clearImmediate: [Function: clearImmediate],
+//   setImmediate: [Function: setImmediate] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   clearInterval: [Function: clearInterval],
+//   clearTimeout: [Function: clearTimeout],
+//   setInterval: [Function: setInterval],
+//   setTimeout: [Function: setTimeout] {
+//     [Symbol(nodejs.util.promisify.custom)]: [Getter]
+//   },
+//   queueMicrotask: [Function: queueMicrotask],
+//   structuredClone: [Function: structuredClone],
+//   atob: [Function: atob],
+//   btoa: [Function: btoa],
+//   performance: [Getter/Setter],
+//   fetch: [Function: fetch],
+//   navigator: [Getter],
+//   crypto: [Getter],
+//   alert: [Function: log],
+//   prompt: [Function (anonymous)]
+// }
+//------
+// constructor=?==A constructor function is just a regular function that 
+// is used with the "new" keyword to create multiple similar objects.//==
+// NEW --refer to obj that executing funtion---
+// Constructor functions start with capital letters 
+// 'new' helps you create multiple objects from the same blueprint.
+//--
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+// }
+// const p = new Person("John", 22);
+// console.log(p.name); // John
+// VM104:9 John
+//--
+//function User(name,age){
+  ////  (this.name=name),(this.age=age);
+//}
+// This is a constructor function.==
+// this refers to the new object being created.==
+// this.name = name sets the object's .name property.==
+// this.age = age sets the object's .age property.==
+// const user1=new User ("prakash",101);
+// const user2 = new User("ashish",111);
+// const user3 = new User("sada",69);
+// new creates a new object like {}.==
+// It runs the User function and sets this.name = "prakash" and this.age = 101 on that new object.==
+// console.log(user1);
+// console.log(user2);
+// console.log(user3);
+//         output ==   User { name: 'prakash', age: 101 }
+           // User { name: 'ashish', age: 111 }
+                  // User { name: 'sada', age: 69 }
+    //------
+// Function Borrowing  == This is done using .call(), .apply(), or .bind().     [.apply()	Same as call(), but args as array]
+// const person1 = {
+//   name: "Alice",
+//   greet: function () {
+//     console.log("Hello, " + this.name);
+//   }
+// };
+// const person2 = {
+//   name: "Bob"
+// };
+// // person2 is borrowing greet() from person1
+// person1.greet.call(person2); // Output: Hello, Bob         .CALL()
+//----
+// const person = {
+//   name: "Charlie",
+//   greet: function () {
+//     console.log("Hi, " + this.name);
+//   }
+// };
+
+// const greetFn = person.greet.bind(person);  //     bind person context
+// greetFn(); // Output: Hi, Charlie                     .BIND
+//-----------
+//MODULES====
+// JavaScript modules help you split code into reusable files, keeping it clean and maintainable.
+// There are 2 major types:
+// 1.ES6 Modules (Static Imports/Exports) – Modern standard.
+// 2.Dynamic Imports – Imported on demand (useful for lazy loading).
+
+// 1. ES6 Modules (Static Import/Export)===========//
+// These are files that export and import code.
+
+//  How to Import--
+//  js
+// // main.js
+// import { add, sub } from './math.js';
+// import greet from './greet.js';
+
+// console.log(add(5, 3)); // 8
+// console.log(greet("Kartikey")); // Hello, Kartikey
+// // math.js
+// export const add = (a, b) => a + b;
+// export const sub = (a, b) => a - b;
+
+// const mul = (a, b) => a * b;
+// const div = (a, b) => a / b;
+// export { mul, div };
+
+// export default function greet(name) {
+//   return `Hello, ${name}`;
+// }
+
+//  How to Import--
+// js
+// Copy
+// Edit
+// // main.js
+// import { add, sub } from './math.js';
+// import greet from './greet.js';
+
+// console.log(add(5, 3)); // 8
+// console.log(greet("Kartikey")); // Hello, Kartikey
+// ............
+
+// 2. Dynamic Import (Lazy Loading)=========
+// Dynamic imports use import() to load modules asynchronously, usually during runtime.
+//  Syntax
+// js
+// // main.js
+// button.addEventListener('click', async () => {
+//   const module = await import('./math.js');
+//   console.log(module.add(2, 3)); // 5
+// });
+// Useful for:
+// Reducing initial bundle size
+// Loading code only when needed
+//...............
+//######ES Modules use import/export. They are static, i.e., 
+// analyzed at compile-time. CommonJS (used in Node.js earlier)
+//  uses require() and module.exports, which are dynamic (evaluated at runtime).#####//
+//...................
+//  Q2: What is the difference between export default and export?
+// Answer:
+// export allows multiple named exports.
+// export default allows only one default export per file and is imported without {}.
+// js
+// export const x = 5;       // Named export
+// export default function() {} // Default export
+// ✅ Q3: Can you import a module conditionally?
+// Answer:
+// Yes, using dynamic import:
+
+// js
+// Copy
+// Edit
+// if (condition) {
+//   const module = await import('./feature.js');
+//   module.run();
+// }
+// ✅ Q4: What is tree shaking in context of ES Modules?
+// Answer:
+// Tree shaking is a process used by bundlers (like Webpack) to remove unused exports from final bundles, reducing file size. It only works with static ES6 imports.
+
+// ✅ Q5: Can you use import outside the top level?
+// Answer:
+// Static import must be at top level.
+// Dynamic import() can be used anywhere.
+//---------
+//---------
+//GEC=GLOBAL EXECUTION CONTEXT(browser check only 1 js file,,,in thats why in that file all js file even react wass there)
+//FEC=functional execution context
+//--------------------------
+//HOISTING------------where variable and function declarations are moved to the top of their scope before 
+// code execution. However, only declarations are hoisted, not initializations.-
+//--initialisation main------
+// greet(); // ✅ Works
+// function greet() {
+//   console.log("Hello!");
+// }
+//--
+// Always declare variables at the top of their scope.
+// Use let or const instead of var.
+// Avoid calling functions before defining them, unless using function declarations.
+//-------------------------
+//TDZ(temporraryy dead zone)   js cant able to find them variable
+// //start there
+// console.log(y);
+// let x= 9; // ends there only by initailaise then finish
+// var y=10;
+// console.log(x);
+//---------------------------
+//FUNCTIONS (BASIC TO ADVANCED)------->
+// PURE FUNCTION (DONT DDEPEND ON OTHER PARAMETER)--
+// function getDoubleValue(number){    [passing vallue]
+//     return number * 2;                [not influenced by anothere parameter like x=3,or anyother]
+// }
+// const result = getDoubleValue(5);     [arguement]
+// console.log(result);      10
+//-----------
+// IMPURE===(DEPENDENT ON OUTER ONE)
+// const x=4;   DEPENEDNT ON X=4
+// function getDoubleValue(number){
+//     return number * 2*x;
+// }
+// const result = getDoubleValue(5);
+// console.log(result);   40
+//--------
+// function appendNumbers(arr){
+//     arr.push(5,6);  //mutating  function
+//     return arr;
+// }const result = appendNumbers([1,2,3,4]);
+// console.log(result);    [1,2,3,4,5,6]
+//----------------------------------
+// // ✅ Function Declaration
+// function greetUser(name) {  // 🏷️ 'name' is a parameter
+//   console.log("Hello, " + name + "!");
+// }
+
+// // 📥 Function Call with an Argument
+// greetUser("Kartikey"); // 📥 "Kartikey" is an argument
+//--------------------
+// ANONYMOUS FUNCTION (WITHOUT NAMED FUNCTION)
+// An anonymous function is a function without a name. It is often used as a value
+//--
+// const greet = function(name) {
+//   console.log("Hello, " + name);
+// };
+
+// greet("Kartikey"); // Output: Hello, Kartikey
+//  function has no name, and is stored in the variable greet.
+//-------------
+//  1. Passed as an Argument (Callback)
+// setTimeout(function() {
+//   console.log("This runs after 2 seconds");
+// }, 2000);
+// The function inside setTimeout is anonymous — it has no name.
+// //--
+//  2. With Array Methods
+// //--
+// let numbers = [1, 2, 3];
+// let squared = numbers.map(function(num) {
+//   return num * num;
+// });
+// console.log(squared); // [1, 4, 9]
+// map() uses an anonymous function to square each number.
+// //--
+//  3. IIFE (Immediately Invoked Function Expression)
+// //--
+// (function() {
+//   console.log("This runs immediately!");
+// })();
+// This is an anonymous IIFE – the function is declared and executed right away.
+// //---------------
+//--------------------
+// WHAT THE MEANING OF RETURN INSIDE FUNCTIONS ????
+// ==EXAMPLE1.
+// function add(a, b) {
+//   return a + b;
+// }
+
+// let result = add(5, 3); // result = 8
+// console.log(result);
+// Here, return a + b; sends the value 8 back to where add(5, 3) was called.
+// Give back a value to where the function was called
+//Stop the function immediately
+//If you don’t use return, the function gives undefined by default.
+//-----------------------------
+//FIRST CLASS FUNCTION -if function treated like other variablles
+//so function can be assined to any other variable or passed 
+//as an argument or arguement can be returned by another function
+//--
+//Q1//
+// const greetMessage = function(){
+//     console.log("helllloooooooo elloo");
+// }
+// greetMessage();
+//------
+//Q2.
+// function wrapper(){
+//     return "welcome";
+// }
+// function greetMessage(inner,name){
+//     // let message = inner();
+//     console.log(name,inner()) //inner func inside greetMessage
+// }
+// greetMessage(wrapper,"chhmapa") //wrapper function passes as an arguement to another function and call that function inside that function.
+//-----------
+//Q3.returning a function
+// function greetMessage(inner,name){
+//     function wraapper(){
+//         let name ="pushpa"
+//         console.log(name,"welcome hahahah");
+//     }  
+// }
+// const output=greetMessage();
+// //   = undefined
+//-----------------
+//-----------------
+//HIGH ORDER FUNCTIONS=accepts another functions as an arguements,+or can return funtion
+//Q1.
+//FIRST CLASS FUNCTION= can be assigned to a variable, and passed as an argument
+// function wrapper (){
+//     return "welcome to hahaha"
+// }
+// //greetMessage=high order function
+// //accepting wrapper as an arguements
+// function greetMessage(){
+//     console.log("Prakash",wrapper())
+// }
+// greetMessage(wrapper);
+//-----
+///Q2.
+// function displayMessage(){
+//     //displayMessage=high order func
+//     //why?=take another func as an arguement or return another
+//     return function(){
+//         return function=1st class func
+//         console.log("hahahahahahahaha")
+//     }
+// }
+// const output = displayMessage();
+// output();
+//------------
+//EXAMPLE
+// const arr =[1,2,3,4,5];
+// function squareOfNumber(arr){
+//     let squaredNumbers = [];   //CREATE ANOTHER ARRY
+//     for(let number of arr){    //LOOPING OVER ARRAY
+//         squaredNumbers.push(number**2)     //FINDING POWER OF EVERY NO.//AND PUSHING  //IF **3 THEN CUBE
+//     }                                  //ONCE LOOP DONE COMPLETELY NEXT STEP THEN
+//     return squaredNumbers;
+// }
+// const output = squareOfNumber(arr);
+// console.log(output);
+// VM301:11 (5) [1, 4, 9, 16, 25]
+//------------------------------------
+//------------------------------------
+//METHODS OF ARRAY =MAP & FILTER======(CAPABLITLITY OF TAKIING FUNCTIONS AS AN ARGUEMENT) COMPARED TO PUSH,POP
+//1.MAP--//callback func onetime on each element of an array
+//MAP TAKES CARE PUSHING OF AN ARRAY &TAKE CARE FOR LOOPS
+//Q1// const arr = [1,2,3,4,5];
+// function getSquare(number){
+//     return number **2;
+// }
+// const output = arr.map (getSquare);
+// console.log(output);
+// console.log(typeof output);
+// VM93:9 (5) [1, 4, 9, 16, 25]
+// VM93:10 object
+//-----
+//Q1.EDITED NEW ARROW STYLE
+// //const arr = [1,2,3,4,5];
+// function getSquare(number){
+//     return number **2;
+// }
+// const output = arr.map (getSquare);  //changed
+// const squareNumbers = arr.map((number)=>{  //changed
+//     return number **2   //changed
+// })
+// console.log(squareNumbers);
+//-----------------
+
+// const arr = [1,2,3,4,5];
+// function getSquare(number){
+//     return number **2;
+// }
+// const output = arr.map (getSquare);
+
+// const squareNumbers = arr.map((number,index)=>{
+//     console.log(index);
+//     return number **2;
+// })
+// console.log(squareNumbers);
+// 0
+// 1
+// 2
+// 3
+// 4
+// [ 1, 4, 9, 16, 25 ]
+//--------------------------------
+// 2.FILTER =FILTERING OUT OF SOMETHING DESIRED
+// Q1// const arr =[1,2,3,4,5,6,7,8];
+//  function filterNumbers(arr){
+//      const tempArr = [];  //filter func create temperory array on its own/loop over array on its own + return temperory arr on its own
+//      for (let number of arr){
+//          if (number >5){     //conditions  //only that (number >5) needs
+//              tempArr.push(number);   //conditions
+//          }    //conditons
+//      }
+//      return tempArr
+//  }
+//  const output = filterNumbers(arr);
+//  console.log(output);
+//--------------
+//Q1 WITH ARROR FUNCTION SHORT//
+// const arr =[1,2,3,4,5,6,7,8];
+//  const output = arr.filter(number =>number>5) //all in one line no need of RETURN
+//  console.log(output);
+//---------------
+// REDUCE= METHOD ON ARRAY (return single value)
+//a func accepts up to 4 arguments...
+//it calls the callbackfunc one time for each element in array.
+//reduce(callbackfn:(previousValue:number, currentValue:number, currentIndex:number,array:number[])=>number): number      
+//currentIndex:number,array:number[] are optional
+//recursive tupe works on parameters
+// const arr=[1,2,3,4,5];
+// const reduceFun = (acc,cur)=> acc + cur;//acc is 0 initial/cur will be 1
+//if current initial  value not given like 0 in low  then takes start one...cur= always all values //0+1=1--> acc stored
+//1+2=3-->acc
+//3+3=6--> acc.....to 15
+// now acc become 1 then again ..and again then 15 comes
+// const output = arr.reduce(reduceFun,0);
+// console.log(output);
+//15
+//----------
+ //ARGUMENTS OBJECTS =REGULAR FUNC HAS-----==--
+//ITS LIKE ARRAY LIKE OBJECT PRESENT LOCALLY INSIDE A FUNCTION AND IT CONTAINS VALUES OF ALL ARGUEMENT PASSED TO A FUNCTION
+//ARROW FFUNC  DOESNT HAVE ARGUMENTS OBJ
+
+// Q1//function calculateTotal(a,b){
+//     return a+b;
+// }
+// const total = calculateTotal(4,5,2,1,5,6);
+// //why? not other numbers(all digits are arguements)
+// //in javascript as per given above (a,b) its takes only a,b per number and ignored other...while in other languages its gives an error.
+// console.log(total);
+// //9
+//=======
+//Q2//
+// function calculateTotal(){
+//     console.log(arguments);   //if (arguments[0])//4 comes  //if we pass arguments [0]=9;  its change values
+// }
+// calculateTotal(4,5,6,7,8,9);
+// //[Arguments] { '0': 4, '1': 5, '2': 6, '3': 7, '4': 8, '5': 9 }
+//======
+//======
+// //REST PARAMETER= used at last of parameter 
+//  function calculateTotal(a,b,...args){ // args or rest same
+//     //wants to store no.s in two diff variable seperate
+//     console.log(a,b);
+//     console.log(args);
+// }
+// calculateTotal(4,5,6,7,8,9,10);
+// //a4//b5//args678910
+//-------------------
+//DIFF OF USING RETURN OR CONSOLE.LOG
+// 💡 Function with console.log():
+// function greet(name) {
+//   console.log("Hello, " + name);
+// }
+// let result = greet("Kartikey"); 
+// console.log("Returned:", result);
+//  What happens:
+// Hello, Kartikey → printed to console
+// result is undefined because greet() has no return
+// Final output:=
+// Hello, Kartikey
+// Returned: undefined
+// ;;;;;;;;;;;;;;;===========
+// 💡 Function with return:
+// function greet(name) {
+//   return "Hello, " + name;
+// }
+// let result = greet("Kartikey");
+// console.log("Returned:", result);
+// What happens:
+// Nothing is printed inside the function
+// result gets the value "Hello, Kartikey"
+// Final output:
+// Returned: Hello, Kartikey
+// ✅ Final Conclusion:
+// return = ends the function + gives back a value to the caller
+// console.log() = only prints something on the screen (side effect), doesn’t end the function or give any value back
+////=====--------------=--------------=====---------------------
+//     //SCOPE=LIMITS TO SEEN  THEM ITS IN OR NOT(LET AND CONST DOESNT HAVE GLOBAL SCOPE)
+//     //global variable =any variable not inside a function
+    //ONLY WORKS IF FUNCTIONS THERE 
+// var x=3; //declared outside function(globally)
+// //aside  its globally its connected and can be used for function is g-V
+// function showNumber(){
+//     console.log(x);
+// }
+// showNumber();
+//=======
+//LOCAL VARIABLE=ONLY INSIDE FUNC AND CONSOLE INSIDE FUNCTION IF CONSOLE WAS OUTSIDE OR DECLARATION OUTSIDE THEN ERROR
+//  function showNum(){
+//      var y= 5;  //local varibale 
+//      console.log(y);
+//  }
+// showNum();
+//---======----====
+// if(true){   //thats not real function that why 4 then 5 done
+//     var a=4;
+//     var b=5;
+// }
+// console.log(a);
+// console.log(b);
+//--------------
+// if(true){ ERRORED ONE QUESTION (CHANGE LET,CONST WITH VAR)
+//     let a =3;   //not in global store
+//     const b=5;  //not in global store
+// }//its works with var easily 
+// console.log(a);
+// console.log(b);
+//===========
+//===========
+// //RECURSION=function called from itself
+// //Q1 normal(SUM OF NUMBERS(0TO5)//function calculateSum(number){
+// //     let total = 0;
+// //     for(let i=1; i<=number; i++){
+// //         total = total +i
+// //     }
+// //     return total;
+// // }
+// // const result = calculateSum(5);
+// // console.log(result);
+// //NOW WITH RECURSION 0TO5 SUM
+// //It takes one parameter, number. Example: 10 is passed later.
+// function calculateSumRecursive(number){
+//    if(number ===1){
+//        return number;
+//        //If the number becomes 1, the function simply returns 1 and does not call itself again.
+//        //Without this, the function would keep calling itself forever and cause an error.
+//    } 
+//    return number + calculateSumRecursive(number -1);
+//    //This is the recursive call.
+//    //It keeps calling itself with one less number until  hits  base case
+// }
+// const total = calculateSumRecursive(10);
+// //calling the function with 10, so the flow will look like:
+// //calculateSumRecursive(10)
+// // → 10 + calculateSumRecursive(9)
+// //     → 9 + calculateSumRecursive(8)
+// //         ...
+// //             → 2 + calculateSumRecursive(1)
+// //                 → return 1
+// console.log(total);//// Output: 55
+// //Finally, once all recursive calls return, total gets the sum 55.
+//====================================
+//====================================
+// //CLOSURE=combination of a function bundled together with reference to its lexical environment.
+// //its rememberss its outer variable and can access them
+// //Q1//a function that can remeber its outer variable
+// //why happen bcz of scope and scope chain
+// function x(){ //func x is y parent
+//     let a=3;
+//     function y(){  //for y  (let a=3;) is outeer variable
+//         console.log(a);  //that a present in func x
+//     }
+//     y();
+// }
+// x();
+//-------------------
+// function x() {
+//   let a = 3;
+//   function y() {
+//     console.log(a);
+//   }
+//   return y;
+// }
+
+// const z = x(); // x() runs, returns y, a is preserved
+// z(); // logs 3 — closure in action
+// 🔑 Closure allows z to remember variable a from x's scope even after x() is done.
+//------------------------
+// for (var i = 0; i < 3; i++) {
+//   (function (j) {
+//     setTimeout(function () {
+//       console.log(j); // 0, 1, 2
+//     }, 1000);
+//   })(i);
+// }
+//---------------------
+//---------------------
+// QUESTIONS=====
+// //PALINDROME STRING(111,101,madam,malayalam)while opposite they results same
+// const str ="madam";
+// const arrOfChar = str.split("");   //split-get arry of char
+// const reversedChar =arrOfChar.reverse(); //applied reverse
+// const reversedStr = reversedChar.join("");//convert arry of str in char
+// console.log(reversedStr);
+//  if(str ===reversedStr){
+//      console.log("String is a palindrome");
+//  }else{
+//      console.log("String is not a palindrome"); 
+//  }
+//                             madam
+//                          String is a palindrome
+// const reversedStr=str.split("").reverse().join("")//applied reverse same can be used
+//----------------------
+// const str ="madami";
+// function getReversedStr(Str){
+//     let reversedStr ="";
+//     for (let i=str.length-1; i>=0; i--){
+//          reversedStr += str[i];
+//     }
+//     return reversedStr;
+// }
+// const result = getReversedStr(str);
+// if(result ===str){
+//     console.log("string palindrome");
+// }else{
+//     console.log("string not palindrome ");
+// } //string not palindrome 
+//-------------------
+//-------------------
+//Q2//DELETING VOWLE FROM STRING
+// ✅.toLowerCase()used because swe gives const vowel in small letter so its work on small so change it to lower if there it is itss helps
+// ✅const means you can't reassign the variable.=In your case:=let result = "";  // result will be reassigned like: result += char=You're reassigning result again and again, so:
+//     🚫 Why const result = "" is not valid here:---Because you're trying to change result by adding characters --result += char; // This is reassignment ❌ for const--So JavaScript will throw an error:TypeError: Assignment to constant variable.
+// const string ="Allu ka paratha yummy tha";
+// function getStrWithNoVowels(str){
+//     const vowels = ["a","e","i","o","u"];
+//     let result ="";
+//     for(let char of str){
+//      if (!vowels.includes(char.toLowerCase())){  //LOGICAL NOT OPERATOR
+//         result +=char
+//     }
+// }
+// return result;
+// }
+// const updatedStr = getStrWithNoVowels(string);
+// console.log(updatedStr);   //ll k prth ymmy th
+//===============
+//===============
+// //MASK CHARACTER= hiding or replacing part of the data(*, #, or X)
+// // const str ="12345678987654321";
+// // const maskChar ="#".repeat(4);//repeat char "n times"  #.repeat 4x#times
+// // const result =  str.slice(0,str.length-4)+maskChar;//17-4=13
+// // //str.slice(0, 13) → it extracts the first 13 characters from the string.then  + maskChar 
+// // console.log(result);
+// //----------
+// //GENERATE SECRET CODE=LIKE CHANGE OF CHARACTERS LIKE P TO R SPACING 2 LIKE...ENCODED
+// //ASCII CODED BE USE THERE =LIKE PC UNDERSTAND NUMBERS
+// // const inputStr="apple";
+// // const getEncodedStr= str=>{
+// //     let encodedStr="";
+// //     let currentPos =0;
+// //     for(let i=0;i<str.length;i++){
+// //         currentPos = str.charCodeAt(i);
+// //         console.log(currentPos);
+// //     }
+// // }
+// // getEncodedStr(inputStr);
+// // 97
+// // 112
+// // 112
+// // 108
+// // 101
+// //EXPLAIN="apple" has characters: a, p, p, l, e
+// // charCodeAt(i) gives the ASCII code for each character:
+// // a → 97
+// // p → 112
+// // p → 112
+// // l → 108
+// // e → 101
+// //--------------------
+// const inputStr="kartikey";
+
+// const getEncodedStr = str => {
+//     let encodedStr ="";
+// let currentPos =0, newPos = 0;
+// for(let i=0; i <str.length; i++){
+//     currentPos=str.charCodeAt(i);// Get ASCII of current char
+//     newPos = currentPos +2;// Shift ASCII by +2
+// encodedStr += String.fromCharCode(newPos);// Convert back to char & add
+// }
+// return encodedStr;
+// }
+// console.log(getEncodedStr(inputStr));// Output: "mctvkmg{"
+// // //🔠 Step-by-Step Encoding:
+// // Let’s take each character of "kartikey" and see what happens:
+// // Char	ASCII	+2	New ASCII	New Char
+// // k	107	+2	109	m
+// // a	97	+2	99	c
+// // r	114	+2	116	t
+// // // t	116	+2	118	v
+// // // i	105	+2	107	k
+// // // k	107	+2	109	m
+// // // e	101	+2	103	g
+// // // y	121	+2	123	{ ✅ ← This is your bracket
+// // // Why { Comes at End:
+// // The last character "y" has ASCII 121
+// // You shift it by +2 → 123
+// // ASCII 123 corresponds to the left curly brace {
+// // That’s why your final output is:
+// // mctvkmg{
+// // //=============
+// // //=============
+// //SUB STRING=
+// // const str ="kartikey_saxena";
+// // for(let i=0; i<str.length;i++){
+// //     for (let j=i+1;j<=str.length;j++){
+// //         console.log(str.slice(i,j))
+// //     }
+// // }
+// k
+// ka
+// kar
+// kart
+// karti
+// kartik
+// kartike
+// kartikey
+// kartikey_
+// kartikey_s
+// kartikey_sa
+// kartikey_sax
+// kartikey_saxe
+// kartikey_saxen
+// kartikey_saxena
+// a
+// ar
+// art
+// arti
+// artik
+// artike
+// artikey
+// artikey_
+// artikey_s
+// artikey_sa
+// artikey_sax
+// artikey_saxe
+// artikey_saxen
+// artikey_saxena
+// r
+// rt
+// rti
+// rtik
+// rtike
+// rtikey
+// rtikey_
+// rtikey_s
+// rtikey_sa
+// rtikey_sax
+// rtikey_saxe
+// rtikey_saxen
+// rtikey_saxena
+// t
+// ti
+// tik
+// tike
+// tikey
+// tikey_
+// tikey_s
+// tikey_sa
+// tikey_sax
+// tikey_saxe
+// tikey_saxen
+// tikey_saxena
+// i
+// ik
+// ike
+// ikey
+// ikey_
+// ikey_s
+// ikey_sa
+// ikey_sax
+// ikey_saxe
+// ikey_saxen
+// ikey_saxena
+// k
+// ke
+// key
+// key_
+// key_s
+// key_sa
+// key_sax
+// key_saxe
+// key_saxen
+// key_saxena
+// e
+// ey
+// ey_
+// ey_s
+// ey_sa
+// ey_sax
+// ey_saxe
+// ey_saxen
+// ey_saxena
+// y
+// y_
+// y_s
+// y_sa
+// y_sax
+// y_saxe
+// y_saxen
+// y_saxena
+// _
+// _s
+// _sa
+// _sax
+// _saxe
+// _saxen
+// _saxena
+// s
+// sa
+// sax
+// saxe
+// saxen
+// saxena
+// a
+// ax
+// axe
+// axen
+// axena
+// x
+// xe
+// xen
+// xena
+// e
+// en
+// ena
+// n
+// na
+// a
+// === Code Execution Successful ===
+//================
+//===============
+//  Odd To Even & Vice Versa-----
+//  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const result = arr.map((num) => (num % 2 === 0 ? num - 1 : num + 1));
+// console.log(result); //[2, 1, 4, 3, 6, 5, 8, 7, 10]
+// num % 2 === 0 checks if the number is even.
+// If even, it subtracts 1 → makes it odd.
+// If odd, it adds 1 → makes it even.
+//=========
+//=========
+// Sum of numbers less than 40---
+// USING REDUCE METHOD(GIVES ONE FINAL RESULT)---
+// const arr = [10, 17, 61, 54, 44, 32, 39, 23];
+// const result = arr.reduce((acc, cur) => (cur < 40 ? acc + cur : acc), 0);
+// console.log(result);//121
+// acc = accumulator (starts at 0).
+// cur = current element in the array.
+// cur < 40 is a condition that checks whether the current number is less than 40.
+// If true, it adds the number to acc.
+// If false, it skips it (returns just acc).
+// 10 < 40 → ✅ Add → 0 + 10 = 10
+// 17 < 40 → ✅ Add → 10 + 17 = 27
+// 61 ≥ 40 → ❌ Skip → 27
+// 54 ≥ 40 → ❌ Skip → 27
+// 44 ≥ 40 → ❌ Skip → 27
+// 32 < 40 → ✅ Add → 27 + 32 = 59
+// 39 < 40 → ✅ Add → 59 + 39 = 98
+// 23 < 40 → ✅ Add → 98 + 23 = 121
+//===========
+//Create an array of names of senior employees-------
+//clean way to extract specific data from arrays of objects.
+// const employees = [
+//   { name: "Prakash", numOfYears: 5 },
+//   { name: "Ashish", numOfYears: 3 },
+//   { name: "Riya", numOfYears: 1 },
+//   { name: "Jay", numOfYears: 1 },
+//   { name: "Chinmoy", numOfYears: 5 },
+// ];
+// const result = employees
+//   .filter((employee) => employee.numOfYears > 3)
+//   .map((employee) => employee.name);
+// console.log(result);//[ 'Prakash', 'Chinmoy' ]
+// //==
+// filter() is used to select only those employees whose numOfYears > 3.
+// ✅ This picks only Prakash and Chinmoy (both with 5 years).
+// map() is then used to extract just the name of those filtered employees.
+// //==============
+// //==============
+//average age of family members using reduce().
+
+// const familyMembers = [
+//   { name: "Narsingrao", age: 56 },
+//   { name: "Padma", age: 52 },
+//   { name: "Poonam", age: 30 },
+//   { name: "Prakash", age: 27 },
+//   { name: "Ashish", age: 50 },
+// ];
+// const totalAge = familyMembers.reduce((acc, cur) => acc + cur.age, 0);
+// const averageAge = totalAge / familyMembers.length;
+// console.log(averageAge);//43
+//--
+// reduce() is used to calculate the total sum of all ages:---------
+// acc = accumulator (starts at 0).
+// cur.age = current member's age.
+// Adds each age to the total.
+// familyMembers.length gives the number of members (5 here).
+// Final average = totalAge / 5.
+// 🧠 Step-by-Step:
+// Ages: 56, 52, 30, 27, 50
+// Total = 56 + 52 + 30 + 27 + 50 = 215
+// Average = 215 / 5 = 43
+//==========
+//  count the occurrences of distinct elements in an array-------------
+//  const arr = ["a", "b", "c", "c", "d", "e", "b", "f", "a"];
+
+// const result = arr.reduce(
+//   (acc, cur) =>
+//     cur in acc ? { ...acc, [cur]: acc[cur] + 1 } : { ...acc, [cur]: 1 },
+//   {}
+// );
+// console.log(result);//{ a: 2, b: 2, c: 2, d: 1, e: 1, f: 1 }
+//--
+// The input array contains repeated characters.
+// You're using reduce() to build an object (acc) that tracks how many times each character (cur) appears.
+// cur in acc checks if the key already exists in the accumulator.
+// If yes, increment the count.
+// If no, start it at 1.
+// { ...acc, [cur]: ... } creates a new object on each iteration with the updated key-value.
+// "a" → 1  
+// "b" → 1  
+// "c" → 1  
+// "c" → 2  
+// "d" → 1  
+// "e" → 1  
+// "b" → 2  
+// "f" → 1  
+// "a" → 2  
+//=======================
+//=======================
+//DOM{DOCUMENT OBJECT MODEL}-----------
+// =a programming interface
+//  that lets you interact with and manipulate HTML and XML documents using JavaScript.
+//  =When a web page is loaded, the browser converts the HTML into a tree-like structure where:
+// Each element (like <h1>, <p>, <div>) becomes a node
+// The whole page is represented as a tree of objects
+//----------------
+// Why is DOM Useful?--------------
+// With JavaScript, you can:
+// 🔍 Access elements: document.getElementById("myId")
+// 📝 Change content: element.innerHTML = "New text"
+// 🎨 Change style: element.style.color = "red"
+// 🎯 React to user actions: element.addEventListener("click", function() { ... })
+//--------------
+//async in JavaScript----
+// keyword is used before a function to make it an asynchronous 
+// function. It automatically returns a Promise, and allows you to use the await keyword inside it.--
+//  Syntax:
+// async function myFunction() {
+//   // code
+// }
+// Or with arrow function:
+// const myFunction = async () => {
+//   // code
+// };
+// //----
+//    Why use async?
+//    To handle asynchronous 
+//    operations (like API calls, timers, file reads) in a clean way instead of using .then() chains
+//    //----
+//    await keyword (used inside async functions)
+// It pauses the function until the Promise is resolved or rejected.
+//    //---
+//    async function getData() {
+//   return "Hello";
+// }
+
+// getData().then(data => console.log(data));  // Output: Hello
+// //----
+// function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => resolve("Data received!"), 2000);
+//   });
+// }
+
+// async function showData() {
+//   console.log("Fetching...");
+//   const result = await fetchData();  // waits for 2 seconds
+//   console.log(result);               // Output: Data received!
+// }
+
+// showData();
+// //-----
+//  Key Points:
+//             Keyword	Meaning
+// async	       --     Marks a function as asynchronous and always returns a Promise
+// await	        --      Pauses the async function until a Promise settles
+// try...catch   --   	Used to handle errors inside async functions
+//------------------------------
+// setTimeout =used to input after mili second or any TimeRanges====
+// console.log("yo");
+// function greet(){
+//     console.log("hohoho")
+// };
+// setTimeout(greet,1000*  2);//after sometime hohoh come
+//----------
+//  Example 1: Clean function for filtering active users (ES6+)--
+// const getActiveUsers = (users) => {
+//   return users.filter(({ isActive }) => isActive);
+// };
+// // Usage
+// const users = [
+//   { name: "Alice", isActive: true },
+//   { name: "Bob", isActive: false },
+// ];
+// console.log(getActiveUsers(users)); // [{ name: "Alice", isActive: true }]
+//--------------
+// Example 2: Async/Await with Fetch (API call)===
+// const fetchPost = async (id) => {
+//   try {
+//     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//     if (!res.ok) throw new Error("Failed to fetch");
+//     const data = await res.json();
+//     return data;
+//   } catch (err) {
+//     console.error("Error:", err.message);
+//   }
+// };
+
+// fetchPost(1).then(post => console.log(post));
+//----------------------
+//  Example 3: Modular Code – Export/Import=========
+// 📁 mathUtils.js
+// export const add = (a, b) => a + b;
+// export const multiply = (a, b) => a * b;
+
+// 📁 main.js
+// import { add, multiply } from './mathUtils.js';
+// console.log(add(2, 3));       // 5
+// console.log(multiply(2, 3));  // 6
+//=------------------------
+//  Class-based Approach (OOP)--
+//  class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   greet() {
+//     return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+//   }
+// }
+// const p1 = new Person("Kartikey", 22);
+// console.log(p1.greet());
+//---------------
+//js is a single threaded-synchronous-first then seond then third line of code executed
+// // JS FUNCTION ALSO KNOWN AS 1ST CLASS CITIZEN:
+// // callback->WE CAN ASSIGN FUNC TO A VARIBALE,WE AN PASS FUNCT AS AN ARGUEMENT TO ANOTHER FUNCTION,AND WE CAN ALSO RETURN A FUNCTION FROM ANOTHER  FUNCTION--
+//callback -main -in -asynchronous(something gonna happen later on down // the code)-waiting for data like (eg:-button)
+// //CALLBACK FUNCTION=
+//1// function a(wrapper) {//a(wrapper)//Both a and b are functions
+// //a(parameteer=wrapper)
+//     console.log("hi");
+//     wrapper();  // calling the function passed as an argument
+// }
+// function b() {
+//     console.log("jj");
+// }
+// a(b);  // You are passing function 'b' as an argument to 'a'
+// //a(b)//You are passing function b as an argument to function a.
+//------------------------
+// //2//console.log("chamatkar");
+// setTimeout(function callback(){
+//     console.log("execute after delay");
+// },4000);//4000 mili second=4sec
+// //chamatkar
+// // execute after delay
+// //-------------------------------
+//if we want to data or fetch from any product like nyka shoes(by url)
+//user response model//send req to server-to see product--only nyka shoes comes by server
+//wenever geetting response we have to handle
+// console.log("chamatkar");
+// setTimeout(function callback(){
+//     console.log("execute after delay");
+//  },4000);
+//  to handle inside fetch 
+//  fetch("https://.....")
+ //use then
+//  .then(function(){
+//executiion of call back func depend of this :something later
+     //callback function used
+     //response logic
+     //it executed only when get response
+     //response take time
+//  })
+//--------------------
+//1st THINNG CALLBACK CREATE IS CALLBACK HILL AND 2ND INVERSION OF CONTROL
+
+//all dependent on each other
+
+/**
+ * Callback Hell
+ * Pyriamid of doom(shape)
+ * Inversion of Control
+ */
+
+//EXAMPLE= bookHotel --> proceedPayment --> showBookingStatus --> updateBookingHistory  (APIs)
+//all r apiS
+// bookHotel(hotelId, function(){ // 1
+//     if (error){
+//         handleError
+//     }else{
+//         proceedToPayment(hotelId, function(){ //2
+//             if (error){
+//                 handleError
+//             }else{
+//                 showBookingStatus(function(){ //3
+//                     if (error){
+//                         handleError
+//                     }else{
+//                         updateBookingHistory(function(){ //4
+//                             if (error){
+//                                 handleError
+//                             }else{
+//                                 success
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+// })
+
+// bookHotel(hotelId, function(){
+//     proceedToPayment(hotelId, function(){
+//     })
+// })
+//-----------------------
+// Style	Readability	Error Handling	Preferred?
+// Callbacks	Low	Complex	❌ No
+// Promises (.then)	Better	Easier	✅ Good
+// Async/Await	Best	Simplest	✅✅ Best
+//-------------------------
+// //PROMISES = AN OBJECT THAT HAS STATUS OF AN ASYNC OPERATION,AND ITS CORRESPONDING(DIRECT RELATIONSHIP) VALUE.--
+// //It has 3 states:--
+// // Pending – The operation is still going.
+// // Fulfilled – The operation completed successfully.
+// // Rejected – The operation failed.
+// //----------
+// // 🧠 Why use Promises?--
+// //= To avoid callback hell and make async code easier to manage.=
+//= A Promise is a way to handle asynchronous operations — like,=
+//  fetching data from a server, waiting for a file to load, or doing something that takes time.=
+// //---------
+// //  Syntax of a Promise--
+// //  let promise = new Promise(function(resolve, reject) {
+// //   // Do something
+// //   // If success: resolve(value)
+// //   // If error: reject(error)
+// // });
+// //-----------------------
+// ✅ Example 1 – Basic Promise with Delay--.
+// ///declares a variable named myPromise.
+// let myPromise = new Promise(function(resolve, reject) {//=myPromise- name-to our Promise object.
+// //=resolve: a function you call when the task is successful.
+// //=reject: a function you call when the task fails.
+//   setTimeout(() => {
+//     resolve("✅ Promise resolved after 2 seconds!");
+//   }, 2000);
+// });
+// //= .then(...): runs after the promise is resolved.
+// myPromise.then(function(result) {
+//     //= function(result) { ... }: =a function that receives the resolve value.
+//   console.log(result);
+// }).catch(function(error) {
+// //   console.log(error);
+// // });//✅ Promise resolved after 2 seconds!
+// //-------------------
+// //✅ Example 2 – Conditional Promise (resolve or reject)--
+// function checkNumber(num) {
+//   return new Promise(function(resolve, reject) {
+//     if (num > 10) {
+//       resolve("✔️ Number is greater than 10");
+//     } else {
+//       reject("❌ Number is 10 or less");
+//     }
+//   });
+// }
+// // =function: defines a named function.
+// // =checkNumber: function name.
+// // =(num): it takes one input: a number.
+// // =resolve: call this if the number is good (success).
+// // =reject: call this if the number is bad (error).
+//=then method -has a callback function ,when promise is resolved not rejected
+//=catch=for error used(if there is any)
+//------------------------
+//when we want to fetch data from api= generally it has  return promise and it has state of request and data also
+//✅ Example  3//
+// const isRequestSuccessful =true;
+
+// let promise = new Promise((resolve, reject)=>{
+// //     if(isRequestSuccessful){
+// //         resolve("promise resolved")//pass data that we send to user
+// //     }else{
+// //         const error =new Error ("wrong happen");
+// //         reject("error")
+// //     }
+// // });
+// // console.log(promise);//Promise { 'promise resolved' }
+//-------------------------------
+//EXAMPLE 4.// const myPromise = new Promise((resolve, reject) => {
+//   const success = true;
+
+//   if (success) {
+//     resolve("I did it!");
+//   } else {
+//     reject("I failed.");
+//   }
+// });
+
+// myPromise
+//   .then((result) => {
+//     console.log("Success:", result);
+//   })
+//   .catch((error) => {
+//     console.log("Error:", error);
+//   });
+
+// //-----------------
+// const isRequestSuccessful =true;
+
+// let promise = new Promise((resolve, reject)=>{
+//     if(isRequestSuccessful){
+//       setTimeout(()=> resolve("promise resolved"),3000);//pass data that we send to user
+//     }else{
+//         const error =new Error ("wrong happen");
+//         reject("error")
+//     }
+// });
+// console.log(promise);//Promise { 'promise resolved' 
+
+// VM62:11 Promise {<pending>}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "promise resolved"
+//-----------------------
+// const isRequestSuccessful = false;
+
+// let promise = new Promise((resolve, reject)=>{
+//     if(isRequestSuccessful){
+//       setTimeout(()=> resolve("promise resolved"),3000);//pass data that we send to user
+//     }else{
+//         const error =new Error ("wrong happen");//new Error(E capital must)
+//         reject(error.message)
+//     }
+// });
+// console.log(promise);
+// VM310:11 
+// Promise {<rejected>: 'wrong happen'}
+// [[Prototype]]: Promise
+// [[PromiseState]]: "rejected"
+// [[PromiseResult]]: "wrong happen"
+//--------------------------------
+//METHOD CHAINING=Method chaining is a programming pattern where you call multiple methods on the same object in a single line, one after another.
+//class Hotel {
+//   constructor(name) {
+//     this.name = name;
+//     this.isRoomBooked = false;
+//     this.isPaymentDone = false;
+//     this.isConfirmed = false;
+//   }
+
+//   bookRoom() {
+//     this.isRoomBooked = true;
+//     console.log("✅ Room booked.");
+//     return this; // to allow chaining
+//   }
+
+//   makePayment() {
+//     if (!this.isRoomBooked) {
+//       console.log("❌ Book room first!");
+//     } else {
+//       this.isPaymentDone = true;
+//       console.log("✅ Payment successful.");
+//     }
+//     return this;
+//   }
+
+//   confirmBooking() {
+//     if (this.isRoomBooked && this.isPaymentDone) {
+//       this.isConfirmed = true;
+//       console.log("✅ Booking confirmed!");
+//     } else {
+//       console.log("❌ Booking can't be confirmed.");
+//     }
+//     return this;
+//   }
+// }
+//  const tajHotel = new Hotel("Taj");
+
+// tajHotel
+//   .bookRoom()
+//   .makePayment()
+//   .confirmBooking();
+//   //----------------------
+//promise.all       ====array of promises==returns a single promise that:
+// ✅ Resolves when all promises are fulfilled.
+// ❌ Rejects as soon as one promise is rejected.
+//..
+//   Promise.all([arrayOfPromise])
+// let users = ["prakashsakari", "AshishJangra27"];
+
+// let arrOfPromises = users.map((user) =>
+//   fetch(`https://api.github.com/users/${user}`)
+// );
+
+// let promise = Promise.all(arrOfPromises);
+// promise
+//   .then((response) => response.forEach((data) => console.log(data.url)))
+//   .catch((err) => console.log(err.message));
+// Failed to fetch
+// Promise {<fulfilled>: undefined}
+// [[Prototype]]: 
+// Promise
+// [[PromiseState]]: 
+// "fulfilled"
+// [[PromiseResult]]: 
+// undefined
+// //..........
+// let promise1 = new Promise((resolve) =>
+//   setTimeout(() => resolve("Promise 1 resolved"), 3000)
+// );
+// let promise2 = new Promise((_, reject) =>
+//   setTimeout(() => reject("Promise 2 reject"), 2000)
+// );
+// let promise3 = new Promise((resolve, reject) =>
+//   setTimeout(() => reject("Promise 3 rejected"), 1000)
+// );
+
+// let arrOfPromises = [promise1, promise2, promise3];
+
+// let promise = Promise.all(arrOfPromises);
+// promise.then((res) => console.log(res)).catch((err) => console.log(err));
+
+// // promise1.then((res) => console.log(res));
+// // promise2.then((res) => console.log(res));
+// // promise3.then((res) => console.log(res));
+//   //--------------
+// const fetchData1 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Data from API 1");
+//     }, 1000);
+//   });
+// };
+
+// const fetchData2 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Data from API 2");
+//     }, 2000);
+//   });
+// };
+
+// const fetchData3 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Data from API 3");
+//     }, 1500);
+//   });
+// };
+
+// Promise.all([fetchData1(), fetchData2(), fetchData3()])
+//   .then((results) => {
+//     console.log("All data received:");
+//     console.log(results); // ["Data from API 1", "Data from API 2", "Data from API 3"]
+//   })
+//   .catch((error) => {
+//     console.error("At least one API failed:", error);
+//   });
+// //..output..
+// Promise {<pending>}
+//   [[Prototype]]: Promise
+//   [[PromiseState]]: "fulfilled"
+//   [[PromiseResult]]: undefined
+//  All data received:
+//  (3) ['Data from API 1', 'Data from API 2', 'Data from API 3']
+
+// 0: "Data from API 1"
+// 1: "Data from API 2"
+// 2: "Data from API 3"
+// length: 3
+// [[Prototype]]: Array(0)
+//..ended output.................
+//---------------------------------
+//METHODS OF PROMISES======
+// Method	                      Description
+//  |                                |                                                                               
+// Promise.resolve(value)	  -    Create a promise that resolves with a value
+// Promise.reject(error)	     -   Create a promise that rejects with an error
+// Promise.all([p1, p2])	     -   Wait for all promises to complete
+// Promise.race([p1, p2])	   -   Returns as soon as the first promise resolves or rejects
+// Promise.allSettled([p1, p2])-	Waits for all to finish (fulfilled or rejected)
+// Promise.any([p1, p2])	       - Resolves when any one promise is fulfilled (ignores rejects)
+//----
+// Method	              Returns	                           Fails When
+//  |                       |                               |
+// resolve(val)	        Success with value	               Never
+// reject(err)          	Failure	                           Always
+// all([])	              All succeed	                       If any fails
+// race([])	            First to finish	                   As soon as one resolves or rejects
+// allSettled([])	      All done                          Never fails
+// any([])	              First success	                    Only if all fail
+//----
+// ✅ Promise.resolve(value)==
+//ex1// const p = Promise.resolve("Hello!");
+// p.then((result) => {
+//   console.log(result); // Output: Hello!
+// });
+//----
+// ex2//function checkLoginStatus(userLoggedIn) {
+//   if (userLoggedIn) {
+//     return Promise.resolve("User is logged in");
+//   } else {
+//     return Promise.resolve("User is not logged in");
+//   }
+// }
+// checkLoginStatus(true).then((msg) => {
+//   console.log(msg); // Output: User is logged in
+// });
+//---------------
+// Promise.reject(error)===
+//ex1//const p = Promise.reject("Something went wrong!");
+// p.catch((err) => {
+//   console.log(err); // Output: Something went wrong!
+// });
+//----
+//ex2//function getUser(id) {
+//   if (id <= 0) {
+//     return Promise.reject("Invalid user ID");
+//   } else {
+//     return Promise.resolve({ id: id, name: "Alice" });
+//   }
+// }
+// getUser(-1)
+//   .then((user) => console.log(user))
+//   .catch((err) => console.log("Error:", err)); // Output: Error: Invalid user ID
+//--------------------------
+// Promise.all([p1, p2])====
+//ex1//const p1 = Promise.resolve("A");
+// const p2 = Promise.resolve("B");
+// Promise.all([p1, p2]).then((values) => {
+//   console.log(values); // Output: ['A', 'B']
+// });
+//----
+//ex2//function fetchUser() {
+//   return new Promise((res) => setTimeout(() => res("User Data"), 1000));
+// }
+
+// function fetchOrders() {
+//   return new Promise((res) => setTimeout(() => res("Order Data"), 2000));
+// }
+// Promise.all([fetchUser(), fetchOrders()])
+//   .then((data) => {
+//     console.log(data); // Output: ['User Data', 'Order Data']
+//   });
+//-------------------
+// Promise.race([p1, p2])====
+//ex1//const p1 = new Promise((res) => setTimeout(() => res("First"), 500));
+// const p2 = new Promise((res) => setTimeout(() => res("Second"), 1000));
+// Promise.race([p1, p2]).then((result) => {
+//   console.log(result); // Output: First
+// });
+//----
+//ex2//function slowAPI() {
+//   return new Promise((res) => setTimeout(() => res("Slow API"), 3000));
+// }
+// function fastAPI() {
+//   return new Promise((res) => setTimeout(() => res("Fast API"), 1000));
+// }
+// Promise.race([slowAPI(), fastAPI()])
+//   .then((value) => {
+//     console.log("Winner:", value); // Output: Winner: Fast API
+//   });
+//---------------------------
+//  Promise.allSettled([p1, p2])====
+//ex1//const p1 = Promise.resolve("Success");
+// const p2 = Promise.reject("Failed");
+// Promise.allSettled([p1, p2]).then((results) => {
+//   console.log(results);
+//   // Output:
+//   // [{status: 'fulfilled', value: 'Success'},
+//   //  {status: 'rejected', reason: 'Failed'}]
+// });
+//----
+//ex2//const tasks = [
+//   Promise.resolve("Task 1 done"),
+//   Promise.reject("Task 2 failed"),
+//   Promise.resolve("Task 3 done"),
+// ];
+// Promise.allSettled(tasks).then((results) => {
+//   results.forEach((result, index) => {
+//     if (result.status === "fulfilled") {
+//       console.log(`Task ${index + 1}: ${result.value}`);
+//     } else {
+//       console.log(`Task ${index + 1} Error: ${result.reason}`);
+//     }
+//   });
+// });
+//------------------------------
+// Promise.any([p1, p2])====
+//ex1//const p1 = Promise.reject("Error 1");
+// const p2 = Promise.resolve("Success!");
+// Promise.any([p1, p2]).then((result) => {
+//   console.log(result); // Output: Success!
+// });
+//----
+//ex2//const p1 = new Promise((_, rej) => setTimeout(() => rej("Failed 1"), 100));
+// const p2 = new Promise((_, rej) => setTimeout(() => rej("Failed 2"), 200));
+// const p3 = new Promise((res) => setTimeout(() => res("Success from P3"), 150));
+
+// Promise.any([p1, p2, p3])
+//   .then((value) => {
+//     console.log("First success:", value); // Output: First success: Success from P3
+//   })
+//   .catch((err) => {
+//     console.log("All failed", err);
+//   });
+//-------------------
+//async/await====
+// async helps==makes it easier to write promise-based code in a cleaner and more readable way,always return promise,allows you to write asynchronous code that looks like synchronous code...
+
+//1// let promise = new Promise(resolve => resolve ("done"));
+// promise.then(res) => console.log(res)).catch(err) => console.log(err));
+// async function returnSomething(){
+//     return "apple";
+// }
+// const result = returnSomething();
+// console.log(result);
+//------
+// // ✅ async function declaration
+// async function showResponse() {
+//     // Create a new Promise that resolves with "done done"
+//     let promise = new Promise((res) => res("done done"));
+// //     // Returning a promise (automatically wrapped in another promise because of async)
+// //     return promise;
+// // }
+// // // Call the async function — it returns a Promise
+// // const promise = showResponse();
+// // // Use .then() to get the resolved value from the Promise
+// // promise.then((res) => console.log(res)); // Output: "done done"
+// //-------
+// // ✅ async + await=====
+// // Declare an async function
+// // async function showResponse() {
+// //     // Simulate a promise that resolves in 2 seconds
+// //     let promise = new Promise((resolve) => {
+// //         setTimeout(() => resolve("✅ Response received after 2 seconds"), 2000);
+// //     });
+
+// //     // Use await to wait for the promise to resolve
+// //     let result = await promise;
+
+// //     // Return the resolved result
+// //     return result;
+// // }
+
+// // // Call the async function
+// // showResponse().then((res) => console.log(res));
+// //.
+// // 🧠 What’s Happening Step-by-Step:---=
+// // async function showResponse():
+// // This function will return a promise automatically.
+// // Inside, we create a promise using setTimeout that resolves after 2 seconds.
+// // await promise:
+// // Pauses execution of the function until the promise resolves.
+// // The value "✅ Response received after 2 seconds" is assigned to result.
+// // We return result, which is "✅ Response received after 2 seconds".
+// // Outside the function, we call showResponse() and use .then() to log the result.
+// //----
+// // async/await + try...catch + real API + error handling====
+
+// ✅ PART 1: Basic Promise Example (Commented)
+// // let promise = new Promise((resolve) => resolve("done"));
+// // promise.then((res) => console.log(res)).catch((err) => console.log(err));
+// 🔍 What it does:
+// Creates a resolved promise with the value "done".
+// .then() is used to log the result.
+// .catch() is attached in case there's an error (though none here).
+
+// ✅ PART 2: getUserData – Using async/await to Fetch Data
+// const getUserData = async () => {
+//   try {
+//     const promise = await fetch("https://mockdata.prakashsakari.repl.co/users");
+//     const response = await promise.json(); // converting response to JSON
+//     console.log(response);
+//   } catch (err) {
+//     console.log(err); // if fetch fails (e.g., 404 or no internet)
+//   }
+// };
+// getUserData();
+// //-----------
+// 🔍 Breakdown:
+// Line                 	What Happens
+// async () => {}	        Declares an async function that returns a promise.
+// await fetch(...)     	Pauses until data is fetched from the API.
+// .json()	                Also returns a promise, which is awaited to get the actual JSON object.
+// try { ... } catch { ... }  Used for safe error handling of async code (like network failure).
+// console.log(response)	Prints the user data array received from the API.
+// //..
+// ✅ Output:
+// If API works:
+// [{ id: 1, name: "User1", ... }, ...]
+
+// If API fails:
+// TypeError: Failed to fetch
+
+// ✅ PART 3: showResponse() – Handling a Rejected Promise
+// async function showResponse() {
+//   try {
+//     let promise = new Promise((res, rej) => rej("promise rejected")); // forced rejection
+//     let result = await promise; // awaits, but will go to catch
+//     console.log(result); // won't execute because promise is rejected
+//   } catch (err) {
+//     console.log("Error Occured::", err);
+//   }
+// }
+
+// // showResponse();
+// 🔍 What’s Happening:
+// Line                         	Explanation
+// new Promise((res, rej) => rej(...))	Creates a rejected promise immediately.
+// await promise	Function pauses until the promise is settled (in this case, rejected).
+// Since it rejects	Control jumps to the catch block.
+// console.log("Error Occured::", err)	Logs the custom error message.
+
+// ✅ Output:
+// Error Occured:: promise rejected
+// 🧠 Summary – What You Learned from This Code:
+// Concept	Meaning
+// async/await	Handles promises in a readable way
+// try...catch	Catches errors in await code easily
+// fetch	Used to call APIs (returns a promise)
+// .json()	Converts HTTP response to usable JSON
+// Rejected promise handling	await inside try + catch pattern
+
+//--------------------------------------------
+//  classes ==were introduced in ES6 (ECMAScript 2015) to provide a cleaner and more familiar syntax to 
+//  create objects and deal with inheritance (like in other OOP languages such as Java or C++).
+//..
+// A class is a blueprint for creating objects with pre-defined properties and methods.
+//..
+// SYNTAX==
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   greet() {
+//     console.log(`Hello, my name is ${this.name}`);
+//   }
+// }
+//--
+// Explanation:==
+// constructor() is a special method that runs when an object is created.
+// this.name and this.age are instance properties.
+// greet() is a method of the class.
+//--
+// 📌 Creating an Object==
+// const person1 = new Person("Alice", 25);
+// person1.greet(); // Output: Hello, my name is Alic
+// //--
+// 🔁 Inheritance (extends, super)==
+// You can create child classes using extends.
+//--
+// class Student extends Person {
+//   constructor(name, age, course) {
+//     super(name, age); // calls the parent constructor
+//     this.course = course;
+//   }
+
+//   showCourse() {
+//     console.log(`${this.name} is enrolled in ${this.course}`);
+//   }
+// }
+// const student1 = new Student("Bob", 20, "BCA");
+// student1.greet();       // Inherited from Person
+// student1.showCourse();  // Bob is enrolled in BCA
+//------
+// 📚 More Features=======>
+// 🔹 Class Expressions==
+// const Animal = class {
+//   speak() {
+//     console.log("Animal speaks");
+//   }
+// };
+// const dog = new Animal();
+// dog.speak(); // Animal speaks
+// //..
+// 🔹 Static Methods==
+// They belong to the class itself, not to instances.=
+// class MathUtil {
+//   static add(a, b) {
+//     return a + b;
+//   }
+// }
+// console.log(MathUtil.add(2, 3)); // 5
+//-----------------
+class BankAccount {
+//   constructor(owner, balance) {
+//     this.owner = owner;
+//     this.balance = balance;
+//   }
+
+//   deposit(amount) {
+//     this.balance += amount;
+//     console.log(`Deposited ₹${amount}. New balance: ₹${this.balance}`);
+//   }
+
+//   withdraw(amount) {
+//     if (amount > this.balance) {
+//       console.log("Insufficient funds");
+//     } else {
+//       this.balance -= amount;
+//       console.log(`Withdrew ₹${amount}. New balance: ₹${this.balance}`);
+//     }
+//   }
+// }
+
+// const acc1 = new BankAccount("Kartikey", 1000);
+// acc1.deposit(500);  // Deposited ₹500. New balance: ₹1500
+// acc1.withdraw(200); // Withdrew ₹200. New balance: ₹1300
+// //--
+// 🧠 Summary
+// JS classes are just syntactic sugar over constructor functions and prototypes.
+// Use classes to write clean, reusable, and modular code.
+// Prefer class syntax in modern JS instead of old prototype-based inheritance.
+// //------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  // 
+  // 
+   //
+//    1.Variables 
+// •  var 
+// •  let
+// •  const
+
+// 2. Data Types
+// •  number 
+// •  string
+// •  boolean 
+// •  null
+// •  undefined
+// •  symbol
+
+// 3.Declaring variables
+// •  var
+// •  let
+// •  const
+
+// 4.Expressions 
+// Primary expressions
+// •  this
+// •  Literals
+// •  []
+// •  {}
+// •  function
+// •  class
+// •  function*
+// •  async function
+// •  async function*
+// •  /ab+c/i
+// •  string
+// •  ( )
+
+// Left-hand-side expressions
+// •  Property accessors
+// •  ?.
+// •  new
+// •  new .target
+// •  import.meta
+// •  super
+// •  import()
+
+// 5.operators
+// •  Arithmetic Operators: +, -, *, /, %
+// •  Comparison Operators: ==, ===, !=, !==, <, >, <=, >=
+// •  Logical Operators: &&, ||, !
+
+// 6.Control Structures
+// •  if
+// •  else if 
+// •  else
+// •  switch
+// •  case
+// •  default
+
+// 7.Iterations/Loop
+// •  do...while
+// •  for
+// •  for...in
+// •  for...of
+// •  for await...of
+// •  while
+
+// 8.Functions
+// •  Arrow Functions
+// •  Default parameters
+// •  Rest parameters
+// •  arguments
+// •  Method definitions
+// •  getter
+// •  setter
+
+// 9.Objects and Arrays
+// •  Object Literal: { key: value }
+// •  Array Literal: [element1, element2, ...]
+// •  Object Methods and Properties
+// •  Array Methods: push(), pop(), shift(), unshift(), 
+//    splice(), slice(), forEach(), map(), filter()
+
+// 10.Classes and Prototypes
+// •  Class Declaration
+// •  Constructor Functions
+// •  Prototypal Inheritance
+// •  extends keyword
+// •  super keyword
+// •  Private class features
+// •  Public class fields
+// •  static
+// •  Static initialization blocks
+
+// 11.Error Handling
+// •  try, 
+// •  catch, 
+// •  finally (exception handling)
+
+// ADVANCED CONCEPTS
+
+// 12.Closures
+// •  Lexical Scope
+// •  Function Scope
+// •  Closure Use Cases
+
+// 13.Asynchronous JavaScript
+// •  Callback Functions
+// •  Promises
+// •  async/await Syntax
+// •  Fetch API
+// •  XMLHttpRequest
+
+// 14.Modules
+// •  import and export Statements (ES6 Modules)
+// •  CommonJS Modules (require, module.exports)
+
+// 15.Event Handling
+// •  Event Listeners
+// •  Event Object
+// •  Bubbling and Capturing
+
+// 16.DOM Manipulation
+// •  Selecting DOM Elements
+// •  Modifying Element Properties
+// •  Creating and Appending Elements
+
+// 17.Regular Expressions
+// •  Pattern Matching
+// •  RegExp Methods: test(), exec(), match(), replace()
+
+// 18.Browser APIs
+// •  localStorage and sessionStorage
+// •  navigator Object
+// •  Geolocation API
+// •  Canvas API
+
+// 19.Web APIs
+// •  setTimeout(), setInterval()
+// •  XMLHttpRequest
+// •  Fetch API
+// •  WebSockets
+
+// 20.Functional Programming
+// •  Higher-Order Functions
+// •  map(), reduce(), filter()
+// •  Pure Functions and Immutability
+
+// 21.Promises and Asynchronous Patterns
+// •  Promise Chaining
+// •  Error Handling with Promises
+// •  Async/Await
+
+// 22.ES6+ Features
+// •  Template Literals
+// •  Destructuring Assignment
+// •  Rest and Spread Operators
+// •  Arrow Functions
+// •  Classes and Inheritance
+// •  Default Parameters
+// •  let, const Block Scoping
+
+// 23.Browser Object Model (BOM)
+// •  window Object
+// •  history Object
+// •  location Object
+// •  navigator Object
+
+// 24.Node.js Specific Concepts
+// •  require()
+// •  Node.js Modules (module.exports)
+// •  File System Module (fs)
+// •  npm (Node Package Manager)
+
+// 25.Testing Frameworks
+// •  Jasmine 
+// •  Mocha
+// •  Jest
+   
+   </script>
+</body>
+</html>

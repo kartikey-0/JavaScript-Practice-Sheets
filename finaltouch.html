@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Foundation </title>
+</head>
+
+<body>
+    <script >
+        // console.log("hi");
+// 📘 JavaScript Mastery Notes (Basics to Advanced)
+
+// =======================================================
+// 1. Variables: var, let, const
+// =======================================================
+// var: function-scoped
+a = 10;
+var a;
+console.log(a); // 10
+
+// let & const: block-scoped
+{
+  let x = 20;
+  const y = 30;
+  console.log(x, y); // 20 30
+}
+// console.log(x, y); // ReferenceError
+
+// =======================================================
+// 2. Data Types & typeof
+// =======================================================
+console.log(typeof "hello"); // string
+console.log(typeof 42);      // number
+console.log(typeof null);    // object (quirk)
+
+// =======================================================
+// 3. Functions (Regular, Arrow, IIFE)
+// =======================================================
+function add(a, b) {
+  return a + b;
+}
+console.log(add(2, 3)); // 5
+
+const arrowAdd = (a, b) => a + b;
+console.log(arrowAdd(4, 5)); // 9
+
+// IIFE
+(function () {
+  console.log("IIFE runs!");
+})();
+
+// =======================================================
+// 4. Arrays & Objects
+// =======================================================
+const arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [1,2,3,4]
+
+const obj = { name: "Alice", age: 25 };
+console.log(obj.name); // Alice
+
+// =======================================================
+// 5. Destructuring (ES6)
+// =======================================================
+const [a1, a2] = [10, 20];
+console.log(a1, a2); // 10 20
+
+const { name, age } = obj;
+console.log(name, age); // Alice 25
+
+// =======================================================
+// 6. Template Literals
+// =======================================================
+let user = "John";
+console.log(`Hello, ${user}!`); // Hello, John!
+
+// =======================================================
+// 7. Spread and Rest Operator
+// =======================================================
+const nums = [1, 2, 3];
+const newNums = [...nums, 4];
+console.log(newNums); // [1,2,3,4]
+
+function sum(...args) {
+  return args.reduce((a, b) => a + b);
+}
+console.log(sum(1, 2, 3)); // 6
+
+// =======================================================
+// 8. Promises
+// =======================================================
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Done!"), 1000);
+});
+
+promise.then(res => console.log(res)); // Done!
+
+// =======================================================
+// 9. async/await
+// =======================================================
+async function fetchData() {
+  const res = await promise;
+  console.log(res); // Done!
+}
+fetchData();
+
+// =======================================================
+// 10. setTimeout & Event Loop
+// =======================================================
+console.log("Start");
+setTimeout(() => console.log("Timeout"), 0);
+console.log("End");
+
+// Output: Start, End, Timeout
+
+// =======================================================
+// 11. Error Handling
+// =======================================================
+try {
+  throw new Error("Something went wrong");
+} catch (e) {
+  console.error(e.message); // Something went wrong
+}
+
+// =======================================================
+// 12. Closures
+// =======================================================
+function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+const counter = outer();
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+// =======================================================
+// 13. this keyword
+// =======================================================
+const obj2 = {
+  name: "JS",
+  showName() {
+    console.log(this.name);
+  },
+};
+obj2.showName(); // JS
+
+// =======================================================
+// 14. Prototypes & Inheritance
+// =======================================================
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.sayHi = function () {
+  console.log(`Hi, I am ${this.name}`);
+};
+
+const p1 = new Person("Alan");
+p1.sayHi(); // Hi, I am Alan
+
+// =======================================================
+// 15. Modules: import/export
+// =======================================================
+// In file math.js:
+// export const add = (a, b) => a + b;
+
+// In main.js:
+// import { add } from './math.js';
+// console.log(add(2, 3));
+
+// =======================================================
+// 16. Memory Management
+// =======================================================
+// JavaScript uses garbage collection for unreferenced objects.
+let obj3 = { data: "important" };
+obj3 = null; // Eligible for garbage collection
+
+// =======================================================
+// 17. Browser APIs
+// =======================================================
+// LocalStorage
+localStorage.setItem("theme", "dark");
+console.log(localStorage.getItem("theme")); // dark
+
+// DOM Manipulation
+const btn = document.createElement("button");
+btn.textContent = "Click Me";
+document.body.appendChild(btn);
+btn.addEventListener("click", () => alert("Clicked!"));
+
+// =======================================================
+// END: JavaScript Master File
+
+
+
+    </script>
+</body>
+
+</html>
